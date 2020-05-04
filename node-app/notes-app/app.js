@@ -1,5 +1,9 @@
 const chalk = require('chalk');
 
+const error = chalk.red.bold;
+const warnaing = chalk.keyword('black');
+
+
 const validator = require('validator');
 const add = require('./utlis');
 
@@ -11,4 +15,7 @@ console.log(validator.isEmail('onlyfef@gmail.com'));
 console.log(validator.isURL('http://google.com'));
 
 // using chalk library ..
-console.log(chalk.green.bold.underline('Succuses'))
+console.log(chalk.green.bold.underline('Succuses'));
+
+console.log(error('faild not working .......'));
+console.log(warnaing);
