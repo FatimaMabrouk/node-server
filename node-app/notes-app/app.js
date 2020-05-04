@@ -1,21 +1,18 @@
 const chalk = require('chalk');
-
 const error = chalk.green.bold.inverse;
 const warnaing = chalk.keyword('black');
-
 
 const validator = require('validator');
 const add = require('./utlis');
 
-const result = add(2,8);
-console.log(result);
+const command = process.argv[2];
 
-console.log(validator.isEmail('onlyfef@gmail.com'));
-// check the url ...
-console.log(validator.isURL('http://google.com'));
+if( command === 'add'){
+    console.log(chalk.blue.inverse('this is a add op......'));
+} else if( command === 'remove'){
+    console.log('removing notes ....');
+}
+else {
+    console.log(process.argv);
+}
 
-// using chalk library ..
-// console.log(chalk.green.bold.underline('Succuses'));
-
-console.log(error('faild not working .......'));
-// console.log(warnaing);
