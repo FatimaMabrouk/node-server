@@ -1,18 +1,48 @@
 const chalk = require('chalk');
-const error = chalk.green.bold.inverse;
-const warnaing = chalk.keyword('black');
+const yargs = require('yargs');
 
-const validator = require('validator');
-const add = require('./utlis');
 
-const command = process.argv[2];
+// Costmaize varsion 
+yargs.version('1.1.0');
 
-if( command === 'add'){
-    console.log(chalk.blue.inverse('this is a add op......'));
-} else if( command === 'remove'){
-    console.log('removing notes ....');
-}
-else {
-    console.log(process.argv);
-}
+// add , remove, read, list 
 
+// command add 
+yargs.command({
+    command: 'add',
+    description: 'adding a note',
+    handler: function(){
+        console.log('adding a new notes');
+    }
+});
+
+yargs.command({
+    command: 'remove',
+    description: 'remove note',
+    handler: function(){
+        console.log('removing a note ........');
+    }
+})
+
+// Chalenges for list & read 
+
+// read .
+yargs.command({
+    command: 'read',
+    description: 'read a note',
+    handler: function(){
+        console.log(chalk.blue(' reading a new notes .....'));
+    }
+});
+
+// list.
+yargs.command({
+    command: 'list',
+    description: 'list a note',
+    handler: function(){
+        console.log(chalk.green('listing all the notes ....'))
+    }
+});
+
+
+console.log(yargs.argv);
