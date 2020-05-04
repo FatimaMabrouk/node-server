@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 
-const error = chalk.red.bold;
+const error = chalk.green.bold.inverse;
 const warnaing = chalk.keyword('black');
 
 
@@ -15,7 +15,7 @@ console.log(validator.isEmail('onlyfef@gmail.com'));
 console.log(validator.isURL('http://google.com'));
 
 // using chalk library ..
-console.log(chalk.green.bold.underline('Succuses'));
+// console.log(chalk.green.bold.underline('Succuses'));
 
 console.log(error('faild not working .......'));
-console.log(warnaing);
+// console.log(warnaing);
