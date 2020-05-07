@@ -5,6 +5,16 @@ const yargs = require('yargs');
 // Costmaize varsion 
 yargs.version('1.1.0');
 
+
+
+// Challenge : add an option to yares .
+//
+// 1- setup the body option for the add command .
+// 2- Configure a discription make it required , and for the type to be string . 
+// log the body value in the handler function .
+
+
+
 // add , remove, read, list 
 
 // command add 
@@ -16,10 +26,17 @@ yargs.command({
             describe : 'add notes',
             demandOption: true,
             type: 'string'
+        },
+        body: {
+            describe : 'note body ...',
+            demandOption: true,
+            type:'string'
+
         }
     },
     handler: function(argv){
-        console.log('adding a new notes ' , argv);
+        console.log(chalk.green('Title :- ',  argv.title));
+        console.log(chalk.blue('Body  :- ' , argv.body));
     }
 });
 
@@ -53,4 +70,5 @@ yargs.command({
 });
 
 
- console.log(yargs.argv);
+//  console.log(yargs.argv);
+yargs.parse();
