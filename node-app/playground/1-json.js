@@ -14,8 +14,23 @@ const book = {
 
 // fs.writeFileSync('1-json.json', jsonData );
 
-const dataBuffer = fs.readFileSync('1-json.json');
-// console.log(dataBuffer.toString());
+// const dataBuffer = fs.readFileSync('1-json.json');
+// // console.log(dataBuffer.toString());
 
+// const data = JSON.parse(dataBuffer.toString());
+// console.log(data.title)
+
+// Challenge :
+// 1 - Load and parse the JSON data .
+// 2 - chamge the name and age property using your info .
+const dataBuffer = fs.readFileSync('1-json.json');
 const data = JSON.parse(dataBuffer.toString());
-console.log(data.title)
+
+data.name = 'fatima';
+data.age = '24';
+
+console.log(data);
+
+const dataUser = JSON.stringify(data);
+console.log(dataUser);
+fs.writeFileSync('1-json.json', dataUser);
